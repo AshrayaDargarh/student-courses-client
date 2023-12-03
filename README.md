@@ -4,6 +4,7 @@ To run this app into your local machine
 - clone this repo.
 - npm install
 - npm run dev
+
 After following these steps this application will run on your local machine
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
