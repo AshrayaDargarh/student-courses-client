@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 const CourseList = () => {
    const coursesData=useSelector(state=>state.course.items);
-//    console.log(coursesData);
   return (
     <>
     <div className="flex-1 p-10 mt-10">

@@ -1,35 +1,9 @@
-// CourseDetails.js
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const sampleCourse = {
-    thumbnail: 'https://via.placeholder.com/300',
-    name: 'Introduction to React Native',
-    instructor: 'John Doe',
-    description: 'A comprehensive course on building mobile apps with React Native.',
-    enrollmentStatus: 'Open',
-    duration: '8 weeks',
-    schedule: 'Mondays and Wednesdays, 6:00 PM - 8:00 PM',
-    location: 'Online',
-    prerequisites: ['Basic JavaScript knowledge', 'Familiarity with React'],
-    syllabus: [
-      {
-        week: 1,
-        topic: 'Introduction to React Native',
-        content: 'Overview of React Native, setting up your development environment.',
-      },
-      {
-        week: 2,
-        topic: 'Building Your First App',
-        content: 'Creating a simple mobile app using React Native components.',
-      },
-      // Additional weeks and topics...
-    ],
-  };
 const CourseDetails = () => {
   const [expandedWeek, setExpandedWeek] = useState(null);
   const {state}=useLocation();
-//   console.log(state)
   const { thumbnail, name, instructor, description, enrollmentStatus, duration, schedule, location, prerequisites, syllabus } = state;
 
   return (
