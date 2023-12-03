@@ -1,4 +1,3 @@
-// CourseComponent.js
 import React from 'react';
 import Course from './Course';
 import { Link } from 'react-router-dom';

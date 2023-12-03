@@ -1,16 +1,15 @@
 // TopNavbar.js
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
+  const student=useSelector(state=>state.student?.items[0])
+  console.log(student)
   return (
     <div className="bg-gray-800 h-16 fixed top-0 w-full flex items-center justify-between px-4 text-white">
-      {/* User Info */}
       <div className="flex items-center space-x-4">
-        {/* Add user info here */}
-        <p className="text-lg font-bold">User Info</p>
+        <p className="text-lg font-bold">{student.name}</p>
       </div>
-
-      {/* Navigation Buttons */}
       <div className="flex items-center space-x-4">
         <NavLink
         to="/"

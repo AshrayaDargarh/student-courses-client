@@ -1,6 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 
-
 const courseData=[
     {
     id:1,
@@ -25,6 +24,7 @@ const courseData=[
         content: 'Creating a simple mobile app using React Native components.',
       }],
       numberOfVideos:100,
+      dueDate: '2023-12-15',
     },
     {
     id:2,
@@ -55,6 +55,7 @@ const courseData=[
       }
     ],
     numberOfVideos:80,
+    dueDate: '2023-12-15',
     }
 ]
 

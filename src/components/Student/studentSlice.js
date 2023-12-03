@@ -5,7 +5,7 @@ const studentData=[
         id: 101,
         name: 'Alice Johnson',
         email: 'alice@example.com',
-        completedVideos:[],
+        watchedVideos:[],
         enrolledCourses:[
                 {
                     id:1,
@@ -29,8 +29,9 @@ const studentData=[
                         topic: 'Building Your First App',
                         content: 'Creating a simple mobile app using React Native components.',
                       }],
-                    numberOfVideos:100,
-
+                    dueDate: '2023-12-15',
+                    progress:70,
+                    completed:false
                     },
                     {
                     id:2,
@@ -59,7 +60,10 @@ const studentData=[
                         topic: 'Building Your First Web App',
                         content: 'Creating a simple web app using React components.',
                       }
-                    ]
+                    ],
+                  dueDate: '2023-12-15',
+                  progress:80,
+                  completed:false
                     }
             
         ]
@@ -90,22 +94,30 @@ const studentData=[
                     week: 2,
                     topic: 'Building Your First App',
                     content: 'Creating a simple mobile app using React Native components.',
-                  }]
+                  }],
+                  dueDate: '2023-12-15',
+                  progress:90,
+                  completed:false
                 },  
     ]
         },
 ]
 
 const initialState={
-    items:[],
+    items:studentData,
     status:'idel'
 }
 
 const studentSlice=createSlice({
     name:'student',
     initialState,
-    reducers:{},
+    reducers:{
+      completeCourse:(state,action)=>{
+        const index=state.items[0].enrolledCourses.findIndex((course)=>course.id===action.payload.id);
+        state.items[0].enrolledCourses.splice(index,1,{...action.payload,completed:true,progress:100})
+      }
+    },
 })
 
-
+export const{completeCourse}=studentSlice.actions;
 export default studentSlice.reducer;

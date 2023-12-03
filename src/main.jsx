@@ -9,6 +9,7 @@ import CourseList from './components/Course/CourseList.jsx'
 import CourseDetails from './components/Course/CourseDetails.jsx'
 import { Provider } from 'react-redux'
 import { store } from './app/store.js'
+
 const router=createBrowserRouter([{
   path:"/",
   element:<App/>,
